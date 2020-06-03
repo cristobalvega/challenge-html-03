@@ -1,5 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
 
+@-moz-keyframes move-astronaut {
+  100% { -moz-transform: translate(-160px, -160px);}
+}
+@-webkit-keyframes move-astronaut {
+  100% { -webkit-transform: translate(-160px, -160px);}
+}
+@keyframes move-astronaut{
+  100% { -webkit-transform: translate(-160px, -160px); transform:translate(-160px, -160px); }
+}
+@-moz-keyframes rotate-astronaut {
+  100% { -moz-transform: rotate(-720deg);}
+}
+@-webkit-keyframes rotate-astronaut {
+  100% { -webkit-transform: rotate(-720deg);}
+}
+@keyframes rotate-astronaut{
+  100% { -webkit-transform: rotate(-720deg); transform:rotate(-720deg); }
+}
+
 * {
   box-sizing: border-box;
 }
@@ -93,7 +112,7 @@ body {
 .Hero-title .btn {
   background-color: #002f4b;
   cursor: pointer;
-  margin: 30px 0px;
+  margin: 30px 0;
   padding: 12px;
   border: 1px solid #002f4b;
   color: white;
@@ -101,7 +120,7 @@ body {
   text-transform: uppercase;
   font-size: 15px;
   border-radius: 5px;
-  letter-spacing: 1.5px;
+  letter-spacing: 2px;
   box-shadow: 0 1px 2px 0 rgba(0,0,0,.3);
 }
 
@@ -113,4 +132,15 @@ body {
   margin: 0;
   padding: 0;
   text-align: right;
+}
+
+.box_astronaut{
+  top: 60%;
+  right: 20%;
+  will-change: transform;
+  animation: move-astronaut 50s infinite linear both alternate;
+}
+
+.object_astronaut {
+  animation: rotate-astronaut 200s infinite linear both alternate;
 }
